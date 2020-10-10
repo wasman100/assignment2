@@ -16,6 +16,10 @@ public class BankAccount {
 		this.interestRate = interestRate;
 	}
 
+	public BankAccount(double balance) {
+		this.balance = balance;
+	}
+
 	public long getAccountNumber() {
 		return accountNumber;
 	}
@@ -29,7 +33,7 @@ public class BankAccount {
 	}
 
 	public boolean withdraw(double amount) {
-		if (balance < amount) {
+		if (balance <= amount) {
 			System.out.println("Sorry you do  not have that much in your account you have $" + balance);
 			return false;
 		} else {
@@ -40,7 +44,7 @@ public class BankAccount {
 	}
 
 	public boolean deposit(double amount) {
-		if ((this.balance + amount) <= 250000) {
+		if (0 < amount) {
 			System.out.println("Deposit bank: " + amount);
 			this.balance = this.balance + amount;
 			return true;
@@ -48,8 +52,6 @@ public class BankAccount {
 			System.out.println(" more than 250000");
 		return false;
 	}
-
-
 
 	public double futureValue(int years) {
 		double value = 0.00;
