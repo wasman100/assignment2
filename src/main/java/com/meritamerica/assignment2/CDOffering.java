@@ -1,17 +1,20 @@
 package com.meritamerica.assignment2;
 
 public class CDOffering {
-	public int term=0;
-	public double intrestRate=0;
+	private int term;
+	private double interestRate;
+
 	public CDOffering(int term, double interestRate) {
 		this.term = term;
-		this.intrestRate = interestRate;
+		this.interestRate = interestRate;
 	}
+
 	public int getTerm() {
 		return term;
 	}
+
 	public double getInterestRate() {
-		return intrestRate;
+		return interestRate;
 	}
 
 }
