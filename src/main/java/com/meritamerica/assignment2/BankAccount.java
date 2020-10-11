@@ -6,8 +6,7 @@ public class BankAccount {
 	public long accountNumber = 0;
 
 	public BankAccount(double balance, double interestRate) {
-		this.balance = balance;
-		this.interestRate = interestRate;
+		this(MeritBank.getNextAccountNumber(), balance, interestRate);
 	}
 
 	public BankAccount(long accountNumber, double balance, double interestRate) {
