@@ -1,9 +1,9 @@
 package com.meritamerica.assignment2;
 
 public class BankAccount {
-	public double balance = 0;
-	public double interestRate = 0;
-	public long accountNumber = 0;
+	public double balance;
+	public double interestRate;
+	public long accountNumber;
 
 	public BankAccount(double balance, double interestRate) {
 		this(MeritBank.getNextAccountNumber(), balance, interestRate);
