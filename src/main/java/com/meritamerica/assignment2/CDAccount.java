@@ -4,14 +4,13 @@ import java.util.Date;
 
 public class CDAccount extends BankAccount {
 	CDOffering offering;
-	private Date date;
-	private double balance =0;
-	private long accountNumber=0;
+	Date date;
+
 		
 	public CDAccount(CDOffering offering, double openBalance){
-		super(openBalance,offering.getInterestRate());
+		super(MeritBank.getNextAccountNumber(), openBalance, offering.getInterestRate());
 		this.date = new Date();
-		this.accountNumber = MeritBank.getNextAccountNumber();
+		this.offering = offering;
 	}
 	
 	public double getBalance() {
@@ -19,7 +18,7 @@ public class CDAccount extends BankAccount {
 	}
 	
 	public double getInterestRate() {
-		return offering.getInterestRate();
+		return interestRate;
 	}
 	
 	public int getTerm() {
