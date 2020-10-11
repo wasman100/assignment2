@@ -2,16 +2,15 @@ package com.meritamerica.assignment2;
 
 import java.util.Date;
 
-public class CDAccount {
+public class CDAccount extends BankAccount {
 	CDOffering offering;
-	Date date;
-	private double balance;
-	private long accountNumber;
+	private Date date;
+	private double balance =0;
+	private long accountNumber=0;
 		
 	public CDAccount(CDOffering offering, double openBalance){
+		super(openBalance,offering.getInterestRate());
 		this.date = new Date();
-		this.offering = offering;
-		this.balance = openBalance;
 		this.accountNumber = MeritBank.getNextAccountNumber();
 	}
 	
@@ -27,7 +26,7 @@ public class CDAccount {
 		return offering.getTerm();
 	}
 	
-	public java.util.Date getStartDate(){
+	public Date getStartDate(){
 		return date;
 	}
 	
